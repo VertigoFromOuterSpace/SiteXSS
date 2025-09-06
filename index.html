@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Sandbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>XSS Sandbox</h1>
+        <p>Um ambiente seguro para testar suas habilidades em Cross-Site Scripting</p>
+    </header>
+
+    <main>
+        <section class="test-area">
+            <h2>Cenário 1: XSS Refletido (Busca)</h2>
+            <p>Digite um termo de busca. O site irá refletir sua entrada diretamente na página. Tente injetar um alerta simples, como <code>&lt;script&gt;alert('XSS Refletido')&lt;/script&gt;</code>.</p>
+            <form id="search-form">
+                <input type="text" id="search-input" name="query" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
+            <div id="search-result" class="output-area">
+                </div>
+        </section>
+
+        <section class="test-area">
+            <h2>Cenário 2: XSS Armazenado (Comentários)</h2>
+            <p>Deixe um comentário. Sua mensagem será "armazenada" e exibida para todos. Tente injetar algo que roubaria um cookie, como <code>&lt;img src=x onerror=alert(document.cookie)&gt;</code>.</p>
+            <form id="comment-form">
+                <input type="text" id="username-input" placeholder="Seu nome" required>
+                <textarea id="comment-input" rows="4" placeholder="Deixe seu comentário aqui..." required></textarea>
+                <button type="submit">Publicar Comentário</button>
+            </form>
+            <div id="comments-section" class="output-area">
+                <h3>Comentários:</h3>
+                </div>
+        </section>
+
+        <section class="test-area">
+            <h2>Cenário 3: Ferramenta de Rede (DOM XSS)</h2>
+            <p>Esta ferramenta simula um comando 'ping'. A entrada é processada via JavaScript e inserida no DOM. Teste payloads que não dependem da resposta do servidor, como <code>127.0.0.1&lt;img src=x onerror=alert('DOM XSS')&gt;</code>.</p>
+            <form id="network-form">
+                <input type="text" id="network-input" placeholder="Digite um IP ou domínio para 'pingar'">
+                <button type="submit">Executar</button>
+            </form>
+            <pre id="network-result" class="output-area"></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>Este site é um projeto educacional para fins de estudo de cibersegurança. Não utilize estas técnicas em sistemas nos quais você não tenha permissão explícita.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
