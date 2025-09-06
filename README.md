@@ -1,7 +1,6 @@
 # XSS Sandbox
 
-Um ambiente educacional seguro para praticar e estudar vulnerabilidades de Cross-Site Scripting (XSS). Este projeto demonstra três tipos principais de XSS através de cenários práticos e interativos.
-
+Um ambiente educacional seguro para praticar e estudar vulnerabilidades de Cross-Site Scripting (XSS). Este projeto demonstra três tipos principais de XSS.
 ## Cenários Implementados
 
 ### 1. XSS Refletido (Reflected XSS)
