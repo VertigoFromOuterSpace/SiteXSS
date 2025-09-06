@@ -47,8 +47,6 @@ searchResult.innerHTML = `Exibindo resultados para: ${query}`;
 
 ### 2. XSS Armazenado (Stored XSS)
 
-**Localização**: Sistema de comentários
-
 **Como funciona**: Os comentários são "armazenados" localmente no DOM e exibidos para todos os usuários. O nome do usuário e o texto do comentário são inseridos diretamente no HTML sem validação.
 
 **Vulnerabilidade no código**:
@@ -95,8 +93,6 @@ newComment.innerHTML = `<strong>${username}:</strong> ${commentText}`;
 
 ### 3. XSS Baseado em DOM (DOM XSS)
 
-**Localização**: Ferramenta de ping simulado
-
 **Como funciona**: A entrada do usuário é processada inteiramente pelo JavaScript do lado cliente e inserida no DOM sem passar pelo servidor. O valor é lido do input e escrito diretamente no elemento de resultado.
 
 **Vulnerabilidade no código**:
@@ -136,83 +132,6 @@ networkResult.innerHTML = output;
    site.com</pre><div onclick="alert('Clique interceptado!')">Clique aqui</div><script>console.log('Console comprometido')</script><pre>
    ```
    Combina múltiplas técnicas em um único payload.
-
-## Arquivos e Funcionalidades
-
-### index.html
-
-**Objetivo**: Estrutura principal da aplicação com três cenários de teste XSS.
-
-**Componentes principais**:
-- Header com título e descrição
-- Três seções de teste (Reflected, Stored, DOM XSS)
-- Forms para interação do usuário
-- Áreas de output para exibir resultados
-- Footer com aviso educacional
-
-**5 Elementos importantes**:
-
-1. **Meta Tags de Segurança**: O arquivo não possui Content Security Policy (CSP), permitindo execução de scripts inline.
-
-2. **Formulários Vulneráveis**: Três formulários diferentes que demonstram vetores de ataque distintos.
-
-3. **Divs de Output**: Elementos específicos para exibir resultados que são alvos das injeções XSS.
-
-4. **Links para Fontes Externas**: Google Fonts carregadas externamente, demonstrando dependências de terceiros.
-
-5. **Estrutura Semântica**: HTML5 semântico bem estruturado, facilitando a compreensão dos diferentes cenários.
-
-### script.js
-
-**Objetivo**: Implementar a lógica vulnerável dos três tipos de XSS de forma didática.
-
-**Funcionalidades principais**:
-- Event listeners para os formulários
-- Manipulação direta do DOM sem sanitização
-- Simulação de armazenamento local de comentários
-- Lógica de ping simulado
-
-**5 Vulnerabilidades implementadas**:
-
-1. **innerHTML Direto**: Uso de innerHTML sem sanitização para inserir conteúdo do usuário.
-
-2. **Ausência de Validação**: Nenhuma validação ou filtro de entrada nos dados do usuário.
-
-3. **Template Literals Inseguros**: Uso de template literals que interpolam diretamente dados não confiáveis.
-
-4. **Event Prevention sem Sanitização**: Prevenção de comportamento padrão mas sem tratar a segurança dos dados.
-
-5. **DOM Manipulation Insegura**: Criação e inserção de elementos DOM com conteúdo não sanitizado.
-
-### style.css
-
-**Objetivo**: Prover interface visual atrativa e funcional com tema dark para melhor experiência do usuário.
-
-**Características do design**:
-- Tema escuro (dark mode)
-- Tipografia monospace para aparência técnica
-- Layout responsivo e acessível
-- Feedback visual para interações
-- Cores com contraste adequado
-
-**5 Aspectos do design**:
-
-1. **Variáveis CSS**: Uso de custom properties para facilitar manutenção de cores e temas.
-
-2. **Typography System**: Fonte Roboto Mono para dar aparência técnica e melhorar legibilidade de código.
-
-3. **Interactive Elements**: Estados hover e focus bem definidos para melhor UX.
-
-4. **Layout Containers**: Estrutura de containers que organiza o conteúdo de forma hierárquica.
-
-5. **Output Styling**: Estilização específica para áreas de resultado que destacam a saída dos testes.
-
-## Como Usar
-
-### Pré-requisitos
-
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Nenhuma dependência externa além das fontes do Google
 
 ### Execução
 
