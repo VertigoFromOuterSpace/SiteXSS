@@ -185,23 +185,6 @@ networkResult.innerHTML = output;
 4. **Keylogging**: Captura de teclas digitadas
 5. **Redirection**: Redirecionamento para sites maliciosos
 
-## Medidas de Proteção (Para Referência)
-
-### No Frontend
-
-1. **Content Security Policy (CSP)**: Definir políticas restritivas para execução de scripts
-2. **Input Sanitization**: Sanitizar todas as entradas do usuário
-3. **Output Encoding**: Codificar saídas conforme o contexto
-4. **DOM APIs Seguras**: Usar `textContent` ao invés de `innerHTML`
-5. **Validation**: Validar entradas no lado cliente e servidor
-
-### No Backend
-
-1. **Input Validation**: Validação rigorosa de todas as entradas
-2. **Output Encoding**: Encoding apropriado baseado no contexto de saída
-3. **HTTPOnly Cookies**: Configurar cookies como HTTPOnly
-4. **CSRF Protection**: Implementar proteção contra CSRF
-5. **Security Headers**: Configurar headers de segurança apropriados
 
 ## Limitações do Ambiente
 
@@ -230,19 +213,4 @@ networkResult.innerHTML = output;
 5. **Browser Developer Tools**: Para análise de DOM e debugging
 
 ## Contribuição
-
-Este é um projeto educacional. Contribuições são bem-vindas para:
-
-- Adicionar novos cenários de XSS
-- Melhorar a documentação
-- Corrigir bugs ou melhorar a interface
-- Adicionar exemplos de proteção
-- Traduzir para outros idiomas
-
-## Licença
-
-Este projeto é disponibilizado apenas para fins educacionais. O uso responsável e ético é fortemente encorajado.
-
-## Aviso Legal
-
-Este projeto foi criado exclusivamente para fins educacionais e de pesquisa em cibersegurança. Os autores não se responsabilizam pelo uso inadequado ou malicioso das técnicas aqui demonstradas. Use este conhecimento apenas em sistemas onde você possui autorização explícita para realizar testes de segurança.
+Faça o que bem entender com esse projeto.
