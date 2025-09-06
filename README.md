@@ -136,7 +136,7 @@ networkResult.innerHTML = output;
 
 1. **Clone ou baixe o projeto**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/VertigoFromOuterSpace/SiteXSS.git
    cd SiteXSS
    ```
 
