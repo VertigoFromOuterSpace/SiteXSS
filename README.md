@@ -6,8 +6,6 @@ Um ambiente educacional seguro para praticar e estudar vulnerabilidades de Cross
 
 ### 1. XSS Refletido (Reflected XSS)
 
-**Localização**: Formulário de busca na página principal
-
 **Como funciona**: O valor digitado no campo de busca é refletido diretamente na página sem sanitização adequada. A entrada do usuário é inserida no HTML através de `innerHTML`, permitindo execução de código JavaScript.
 
 **Vulnerabilidade no código**:
