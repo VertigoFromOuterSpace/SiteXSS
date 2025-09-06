@@ -2,22 +2,6 @@
 
 Um ambiente educacional seguro para praticar e estudar vulnerabilidades de Cross-Site Scripting (XSS). Este projeto demonstra três tipos principais de XSS através de cenários práticos e interativos.
 
-## Estrutura do Projeto
-
-```
-SiteXSS/
-├── index.html    # Página principal com os cenários de teste
-├── script.js     # Lógica JavaScript vulnerável
-├── style.css     # Estilos visuais com tema dark
-└── README.md     # Este arquivo
-```
-
-## Propósito Educacional
-
-Este projeto foi desenvolvido exclusivamente para fins educacionais em cibersegurança. Ele demonstra como vulnerabilidades XSS podem ser exploradas em aplicações web reais, permitindo que estudantes e profissionais pratiquem técnicas de identificação e exploração em um ambiente controlado.
-
-**IMPORTANTE**: Use este conhecimento apenas em sistemas onde você tem permissão explícita para testes de segurança.
-
 ## Cenários Implementados
 
 ### 1. XSS Refletido (Reflected XSS)
